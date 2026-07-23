@@ -1,14 +1,16 @@
 # Docker for Codex
 
-A focused Codex plugin for building, running, debugging, reviewing, and securing Docker containers and Docker Compose applications.
+A focused Codex plugin for detecting, containerizing, testing, optimizing, and securing Docker projects and Docker Compose applications.
 
 ## Capabilities
 
+- Detect runtimes, frameworks, lockfiles, Docker assets, and CI configuration
 - Create and improve `Dockerfile`, `.dockerignore`, and Compose configurations
-- Design cache-efficient multi-stage builds
+- Audit common Docker security risks and secret-handling mistakes
+- Design cache-efficient, size-conscious multi-stage builds
+- Plan or execute isolated Compose smoke tests with safe cleanup
+- Generate GitHub Actions workflows for image validation and optional GHCR publishing
 - Diagnose build, startup, networking, storage, and health-check failures
-- Verify images and local Compose stacks
-- Review container configuration for common security and secret-handling risks
 - Apply conservative cleanup practices that protect unrelated containers and persistent data
 
 ## Installation
@@ -30,8 +32,8 @@ The plugin manifest is located at `.codex-plugin/plugin.json`. Its skill is disc
 Example prompts:
 
 - `Containerize this project with Docker.`
-- `Debug this Docker build or Compose stack.`
-- `Review these Docker files for security and image size.`
+- `Audit and optimize this Docker configuration.`
+- `Create a safe container smoke test and CI workflow.`
 
 ## Plugin structure
 
@@ -43,6 +45,11 @@ Example prompts:
 │   └── docker-workflows/
 │       ├── agents/
 │       │   └── openai.yaml
+│       ├── scripts/
+│       │   ├── audit_docker.py
+│       │   ├── generate_ci.py
+│       │   ├── inspect_project.py
+│       │   └── smoke_test.py
 │       └── SKILL.md
 └── scripts/
     └── validate.py

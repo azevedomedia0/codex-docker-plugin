@@ -1,7 +1,7 @@
 {
   "name": "docker",
-  "version": "0.1.0",
-  "description": "Build, run, debug, and secure Docker containers with Codex.",
+  "version": "0.2.0",
+  "description": "Detect, containerize, test, optimize, and secure Docker projects with Codex.",
   "author": {
     "name": "Azevedo Media",
     "url": "https://github.com/azevedomedia0"
@@ -13,15 +13,15 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Docker",
-    "shortDescription": "Build, run, debug, and secure containers.",
-    "longDescription": "Docker helps Codex containerize projects, maintain Dockerfiles and Compose configurations, troubleshoot builds and services, and verify container behavior safely.",
+    "shortDescription": "Detect, build, test, optimize, and secure containers.",
+    "longDescription": "Docker helps Codex detect project stacks, containerize applications, audit and optimize Docker configuration, smoke-test services, generate CI workflows, and troubleshoot builds safely.",
     "developerName": "Azevedo Media",
     "category": "Developer Tools",
     "capabilities": ["Read", "Write", "Execute"],
     "defaultPrompt": [
-      "Containerize this project with Docker.",
-      "Debug this Docker build or Compose stack.",
-      "Review these Docker files for security and size."
+      "Detect this project's stack and containerize it.",
+      "Audit and optimize this Docker configuration.",
+      "Create a safe container smoke test and CI workflow."
     ],
     "brandColor": "#2496ED"
   }

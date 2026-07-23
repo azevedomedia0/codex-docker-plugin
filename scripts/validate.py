@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import ast
 import json
 import re
 import sys
@@ -104,6 +105,16 @@ def validate_skills(data: dict) -> None:
             fail(f"Missing agent metadata: {agent_metadata.relative_to(ROOT)}")
         if f"${name}" not in agent_metadata.read_text(encoding="utf-8"):
             fail(f"Default prompt must reference ${name} in {agent_metadata.relative_to(ROOT)}")
+
+        skill_text = skill_file.read_text(encoding="utf-8")
+        for script in sorted((skill_file.parent / "scripts").glob("*.py")):
+            relative_script = script.relative_to(skill_file.parent).as_posix()
+            if relative_script not in skill_text:
+                fail(f"Bundled script is not referenced by the skill: {relative_script}")
+            try:
+                ast.parse(script.read_text(encoding="utf-8"), filename=str(script))
+            except SyntaxError as error:
+                fail(f"Invalid Python in {script.relative_to(ROOT)}: {error}")
 
 
 def main() -> int:

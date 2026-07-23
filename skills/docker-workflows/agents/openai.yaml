@@ -1,4 +1,4 @@
 interface:
   display_name: "Docker Workflows"
-  short_description: "Build, run, debug, and secure containers"
-  default_prompt: "Use $docker-workflows to containerize and run this project safely."
+  short_description: "Detect, build, test, optimize, and secure containers"
+  default_prompt: "Use $docker-workflows to inspect, containerize, audit, and test this project."
