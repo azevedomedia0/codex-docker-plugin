@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docker Supply Chain"
+  short_description: "Scan, inventory, sign, and secure Docker images"
+  default_prompt: "Use $docker-supply-chain to audit, scan, inventory, and sign this container image."

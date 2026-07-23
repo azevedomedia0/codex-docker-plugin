@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docker Platforms"
+  short_description: "Generate framework, devcontainer, and Kubernetes assets"
+  default_prompt: "Use $docker-platforms to create deployment and development container assets."

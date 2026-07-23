@@ -107,6 +107,18 @@ def validate_skills(data: dict) -> None:
             fail(f"Default prompt must reference ${name} in {agent_metadata.relative_to(ROOT)}")
 
         skill_text = skill_file.read_text(encoding="utf-8")
+        for linked_path in re.findall(r"\]\(([^)]+)\)", skill_text):
+            if "://" in linked_path or linked_path.startswith("#"):
+                continue
+            target = (skill_file.parent / linked_path).resolve()
+            if skill_file.parent not in target.parents:
+                fail(f"Skill link escapes its directory: {linked_path}")
+            if not target.is_file():
+                fail(f"Broken skill resource link: {skill_file.relative_to(ROOT)} -> {linked_path}")
+        for reference in sorted((skill_file.parent / "references").glob("*.md")):
+            relative_reference = reference.relative_to(skill_file.parent).as_posix()
+            if relative_reference not in skill_text:
+                fail(f"Bundled reference is not linked by the skill: {relative_reference}")
         for script in sorted((skill_file.parent / "scripts").glob("*.py")):
             relative_script = script.relative_to(skill_file.parent).as_posix()
             if relative_script not in skill_text:

@@ -16,6 +16,7 @@ Keep skill instructions concise, imperative, and grounded in safe Docker workflo
 
 - Keep each pull request focused on one coherent change.
 - Update starter prompts or metadata when behavior changes materially.
-- Preserve the plugin name `docker` and the `docker-workflows` skill namespace.
+- Preserve the plugin name `docker` and use focused `docker-*` skill namespaces.
+- Link every bundled script and reference directly from its owning `SKILL.md`.
 - Include a realistic example prompt when introducing a new workflow.
 - Confirm that no broad prune, volume deletion, registry push, or remote deployment occurs without explicit user authorization.

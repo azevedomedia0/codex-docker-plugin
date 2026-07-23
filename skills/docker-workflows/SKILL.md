@@ -30,6 +30,8 @@ Treat detection as evidence, not certainty. Reconcile conflicting markers with s
 - Use service names between Compose containers, not `localhost`.
 - Avoid obsolete Compose `version` keys.
 
+For a new local stack, run `python3 scripts/generate_compose.py --service <name> --port <port>` to print a starter Compose file. Add `--postgres` or `--redis` only when the application needs those services. Review generated commands, health checks, credentials, and persistence before writing the file.
+
 ## Audit and optimize
 
 Run `python3 scripts/audit_docker.py <project>` from this skill directory before and after material Docker changes.

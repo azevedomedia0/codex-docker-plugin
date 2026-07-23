@@ -18,6 +18,27 @@ def run(command: list[str], cwd: Path, capture: bool = False) -> subprocess.Comp
     return subprocess.run(command, cwd=cwd, check=False, text=True, capture_output=capture)
 
 
+def service_ready(output: str) -> bool:
+    try:
+        parsed = json.loads(output)
+        rows = parsed if isinstance(parsed, list) else [parsed]
+    except json.JSONDecodeError:
+        rows = []
+        for line in output.splitlines():
+            try:
+                rows.append(json.loads(line))
+            except json.JSONDecodeError:
+                continue
+    if not rows:
+        return False
+    for row in rows:
+        state = str(row.get("State", "")).lower()
+        health = str(row.get("Health", "")).lower()
+        if state != "running" or (health and health != "healthy"):
+            return False
+    return True
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--project", default=".")
@@ -64,14 +85,14 @@ def main() -> int:
             if args.url:
                 try:
                     with urllib.request.urlopen(args.url, timeout=3) as response:
-                        if response.status < 500:
+                        if 200 <= response.status < 400:
                             print(f"Smoke test passed: HTTP {response.status}")
                             return 0
                 except (urllib.error.URLError, TimeoutError):
                     pass
             else:
                 result = run(compose + ["ps", "--format", "json", args.service], root, capture=True)
-                if result.returncode == 0 and '"State":"running"' in result.stdout.replace(" ", ""):
+                if result.returncode == 0 and service_ready(result.stdout):
                     print("Smoke test passed: service is running")
                     return 0
             time.sleep(2)

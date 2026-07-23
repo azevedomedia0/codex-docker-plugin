@@ -1,7 +1,7 @@
 {
   "name": "docker",
-  "version": "0.2.0",
-  "description": "Detect, containerize, test, optimize, and secure Docker projects with Codex.",
+  "version": "1.0.0",
+  "description": "End-to-end Docker engineering, security, release, platform, and operations workflows for Codex.",
   "author": {
     "name": "Azevedo Media",
     "url": "https://github.com/azevedomedia0"
@@ -13,15 +13,15 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Docker",
-    "shortDescription": "Detect, build, test, optimize, and secure containers.",
-    "longDescription": "Docker helps Codex detect project stacks, containerize applications, audit and optimize Docker configuration, smoke-test services, generate CI workflows, and troubleshoot builds safely.",
+    "shortDescription": "Build, secure, release, migrate, and operate containers.",
+    "longDescription": "Docker gives Codex end-to-end container workflows: project-aware builds, Compose stacks, testing, security and supply-chain controls, multi-platform publishing, framework recipes, Kubernetes and devcontainers, data operations, resource tuning, and observability.",
     "developerName": "Azevedo Media",
     "category": "Developer Tools",
     "capabilities": ["Read", "Write", "Execute"],
     "defaultPrompt": [
-      "Detect this project's stack and containerize it.",
-      "Audit and optimize this Docker configuration.",
-      "Create a safe container smoke test and CI workflow."
+      "Containerize, test, and optimize this project.",
+      "Audit this image and design a secure release.",
+      "Plan deployment, data operations, and observability."
     ],
     "brandColor": "#2496ED"
   }

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docker Release"
+  short_description: "Build multi-platform images and publish them safely"
+  default_prompt: "Use $docker-release to build and publish this image with provenance."

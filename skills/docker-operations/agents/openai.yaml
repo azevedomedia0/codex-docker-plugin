@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docker Operations"
+  short_description: "Operate databases, resources, backups, and observability"
+  default_prompt: "Use $docker-operations to plan safe container operations and observability."
