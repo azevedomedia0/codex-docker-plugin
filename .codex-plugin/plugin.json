@@ -23,6 +23,8 @@
       "Audit this image and design a secure release.",
       "Plan deployment, data operations, and observability."
     ],
-    "brandColor": "#2496ED"
+    "brandColor": "#2496ED",
+    "composerIcon": "./assets/docker.png",
+    "logo": "./assets/docker.png"
   }
 }

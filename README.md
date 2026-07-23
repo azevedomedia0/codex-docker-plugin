@@ -2,6 +2,8 @@
 
 A marketplace-ready Codex plugin for the complete container lifecycle: development, security, release, deployment, and operations.
 
+![Docker plugin icon](assets/docker.png)
+
 ## Features
 
 1. **Project-aware containerization** — detect runtimes, frameworks, lockfiles, monorepos, Docker assets, and CI.
