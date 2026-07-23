@@ -2,7 +2,7 @@
 
 A marketplace-ready Codex plugin for the complete container lifecycle: development, security, release, deployment, and operations.
 
-![Docker plugin icon](assets/docker.png)
+<img src="assets/docker.png" alt="Docker plugin icon" width="540">
 
 This community plugin is not affiliated with or endorsed by Docker, Inc.
 
