@@ -18,6 +18,9 @@
     "developerName": "Azevedo Media",
     "category": "Developer Tools",
     "capabilities": ["Read", "Write", "Execute"],
+    "websiteURL": "https://github.com/azevedomedia0/codex-docker-plugin",
+    "privacyPolicyURL": "https://github.com/azevedomedia0/codex-docker-plugin/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/azevedomedia0/codex-docker-plugin/blob/main/TERMS.md",
     "defaultPrompt": [
       "Containerize, test, and optimize this project.",
       "Audit this image and design a secure release.",

@@ -4,6 +4,8 @@ A marketplace-ready Codex plugin for the complete container lifecycle: developme
 
 ![Docker plugin icon](assets/docker.png)
 
+This community plugin is not affiliated with or endorsed by Docker, Inc.
+
 ## Features
 
 1. **Project-aware containerization** — detect runtimes, frameworks, lockfiles, monorepos, Docker assets, and CI.
