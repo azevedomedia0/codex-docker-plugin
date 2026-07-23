@@ -1,0 +1,19 @@
+name: Feature request
+description: Suggest a Docker workflow improvement
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What Docker task or failure should the plugin handle better?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Include an example prompt when possible.
+    validations:
+      required: true

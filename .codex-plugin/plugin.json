@@ -1,0 +1,28 @@
+{
+  "name": "docker",
+  "version": "0.1.0",
+  "description": "Build, run, debug, and secure Docker containers with Codex.",
+  "author": {
+    "name": "Azevedo Media",
+    "url": "https://github.com/azevedomedia0"
+  },
+  "homepage": "https://github.com/azevedomedia0/codex-docker-plugin#readme",
+  "repository": "https://github.com/azevedomedia0/codex-docker-plugin",
+  "license": "MIT",
+  "keywords": ["docker", "containers", "compose", "dockerfile"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Docker",
+    "shortDescription": "Build, run, debug, and secure containers.",
+    "longDescription": "Docker helps Codex containerize projects, maintain Dockerfiles and Compose configurations, troubleshoot builds and services, and verify container behavior safely.",
+    "developerName": "Azevedo Media",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write", "Execute"],
+    "defaultPrompt": [
+      "Containerize this project with Docker.",
+      "Debug this Docker build or Compose stack.",
+      "Review these Docker files for security and size."
+    ],
+    "brandColor": "#2496ED"
+  }
+}
